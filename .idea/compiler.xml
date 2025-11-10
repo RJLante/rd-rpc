@@ -11,6 +11,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rd-rpc-easy" />
+        <module name="rd-rpc-core" />
         <module name="example-provider" />
         <module name="example-common" />
         <module name="example-consumer" />
