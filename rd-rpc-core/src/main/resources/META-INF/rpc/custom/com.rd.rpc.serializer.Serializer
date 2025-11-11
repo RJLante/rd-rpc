@@ -1,0 +1,2 @@
+c=com.rd.rpc.serializer.JsonSerializer
+d=com.rd.rpc.serializer.KryoSerializer
