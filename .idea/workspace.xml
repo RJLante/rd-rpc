@@ -5,28 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1289f58-b893-4fac-8b38-4afcf383871a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/example-provider/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/registry/RegistryServiceCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/registry/ZooKeeperRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-common/target/classes/com/rd/example/common/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/example-common/target/classes/com/rd/example/common/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-common/target/classes/com/rd/example/common/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/example-common/target/classes/com/rd/example/common/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-consumer/src/main/java/com/rd/example/consumer/ConsumerExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/src/main/java/com/rd/example/consumer/ConsumerExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-consumer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-consumer/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-consumer/target/classes/com/rd/example/consumer/ConsumerExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/target/classes/com/rd/example/consumer/ConsumerExample.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-consumer/target/classes/com/rd/example/consumer/EasyConsumerExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/target/classes/com/rd/example/consumer/EasyConsumerExample.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-consumer/target/classes/com/rd/example/consumer/UserServiceProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/target/classes/com/rd/example/consumer/UserServiceProxy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/RpcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/RpcApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/registry/EtcdRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/registry/EtcdRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/registry/Registry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/registry/Registry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/server/HttpServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/src/main/java/com/rd/rpc/server/HttpServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/src/main/resources/META-INF/rpc/system/com.rd.rpc.registry.Registry" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/src/main/resources/META-INF/rpc/system/com.rd.rpc.registry.Registry" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/src/test/java/com/rd/rpc/registry/RegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/src/test/java/com/rd/rpc/registry/RegistryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/META-INF/rpc/system/com.rd.rpc.registry.Registry" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/META-INF/rpc/system/com.rd.rpc.registry.Registry" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-provider/target/classes/com/rd/example/provider/EasyProviderExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/example-provider/target/classes/com/rd/example/provider/EasyProviderExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-provider/target/classes/com/rd/example/provider/ProviderExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/example-provider/target/classes/com/rd/example/provider/ProviderExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-provider/target/classes/com/rd/example/provider/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/example-provider/target/classes/com/rd/example/provider/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rd-rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/RpcApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/RpcApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/config/RegistryConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/config/RegistryConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/config/RpcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/config/RpcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/constant/RpcConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/constant/RpcConstant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/model/RpcRequest$RpcRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/model/RpcRequest$RpcRequestBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/model/RpcRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/model/RpcRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/model/RpcResponse$RpcResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/model/RpcResponse$RpcResponseBuilder.class" afterDir="false" />
@@ -35,24 +27,20 @@
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/proxy/MockServiceProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/proxy/MockServiceProxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/proxy/ServiceProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/proxy/ServiceProxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/proxy/ServiceProxyFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/proxy/ServiceProxyFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/EtcdRegistry$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/EtcdRegistry$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/EtcdRegistry.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/EtcdRegistry.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/LocalRegistry.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/LocalRegistry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/Registry.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/Registry.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/RegistryFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/RegistryFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/RegistryKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/RegistryKeys.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/RegistryServiceCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/registry/RegistryServiceCache.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/HessianSerializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/HessianSerializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/JdkSerializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/JdkSerializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/JsonSerializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/JsonSerializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/KryoSerializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/KryoSerializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/Serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/Serializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/SerializerFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/SerializerFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/SerializerKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/serializer/SerializerKeys.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/server/HttpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/server/HttpServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/server/HttpServerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/server/HttpServerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/server/VertxHttpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/server/VertxHttpServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/spi/SpiLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/spi/SpiLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/utils/ConfigUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/classes/com/rd/rpc/utils/ConfigUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rd-rpc-core/target/test-classes/com/rd/rpc/registry/RegistryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/rd-rpc-core/target/test-classes/com/rd/rpc/registry/RegistryTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,11 +63,15 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="34ECiiwzwMDO7uYUyMolebJjLwk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.ConsumerExample.executor&quot;: &quot;Run&quot;,
     &quot;Application.EasyConsumerExample.executor&quot;: &quot;Run&quot;,
     &quot;Application.EasyProviderExample.executor&quot;: &quot;Run&quot;,
@@ -207,11 +199,15 @@
       <workItem from="1762756441686" duration="5228000" />
       <workItem from="1762764388449" duration="2246000" />
       <workItem from="1762827705149" duration="14148000" />
-      <workItem from="1762910735673" duration="3162000" />
+      <workItem from="1762910735673" duration="4463000" />
+      <workItem from="1762917514429" duration="3671000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
