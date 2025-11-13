@@ -1,8 +1,6 @@
 package com.rd.rpc.proxy;
 
 import cn.hutool.core.collection.CollUtil;
-import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpResponse;
 import com.rd.rpc.RpcApplication;
 import com.rd.rpc.config.RpcConfig;
 import com.rd.rpc.constant.RpcConstant;
@@ -13,8 +11,8 @@ import com.rd.rpc.registry.Registry;
 import com.rd.rpc.registry.RegistryFactory;
 import com.rd.rpc.serializer.Serializer;
 import com.rd.rpc.serializer.SerializerFactory;
+import com.rd.rpc.server.tcp.VertxTcpClient;
 
-import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.List;
@@ -44,78 +42,22 @@ public class ServiceProxy implements InvocationHandler {
                 .args(args)
                 .build();
         try {
-            // 序列化
-            byte[] bodyBytes = serializer.serialize(rpcRequest);
-
             // 从注册中心获取服务提供者请求地址
             RpcConfig rpcConfig = RpcApplication.getRpcConfig();
             Registry registry = RegistryFactory.getInstance(rpcConfig.getRegistryConfig().getRegistry());
             ServiceMetaInfo serviceMetaInfo = new ServiceMetaInfo();
             serviceMetaInfo.setServiceName(serviceName);
             serviceMetaInfo.setServiceVersion(RpcConstant.DEFAULT_SERVICE_VERSION);
-            List<ServiceMetaInfo> serviceMetaInfoList = registry.serviceDiscovery(serviceMetaInfo.getServiceKey());
-            if (CollUtil.isEmpty(serviceMetaInfoList)) {
-                throw new RuntimeException("暂无服务地址");
-            }
-            ServiceMetaInfo selectedServiceMetaInfo = serviceMetaInfoList.get(0);
-
-            // 获取Content-Type
-            String contentType = getContentType(rpcConfig.getSerializer());
-            
-            // 发送请求
-            try (HttpResponse httpResponse = HttpRequest.post(selectedServiceMetaInfo.getServiceAddress())
-                    .header("Content-Type", contentType)
-                    .body(bodyBytes)
-                    .execute()) {
-                
-                // 检查HTTP状态码
-                int statusCode = httpResponse.getStatus();
-                if (statusCode != 200) {
-                    String errorBody = httpResponse.body();
-                    throw new RuntimeException(String.format("RPC调用失败，HTTP状态码: %d, 响应: %s", statusCode, errorBody));
-                }
-                
-                byte[] result = httpResponse.bodyBytes();
-                if (result == null || result.length == 0) {
-                    throw new RuntimeException("RPC调用失败，响应体为空");
-                }
-                
-                // 反序列化
-                RpcResponse rpcResponse = serializer.deserialize(result, RpcResponse.class);
-                if (rpcResponse == null) {
-                    throw new RuntimeException("RPC调用失败，反序列化响应为null");
-                }
-                
-                // 检查响应是否有异常
-                if (rpcResponse.getException() != null) {
-                    throw new RuntimeException("RPC服务端异常: " + rpcResponse.getMessage(), rpcResponse.getException());
-                }
-                
-                return rpcResponse.getData();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("RPC调用IO异常", e);
+           List<ServiceMetaInfo> serviceMetaInfoList = registry.serviceDiscovery(serviceMetaInfo.getServiceKey());
+           if (CollUtil.isEmpty(serviceMetaInfoList)) {
+               throw new RuntimeException("暂无服务地址");
+           }
+           ServiceMetaInfo selectedServiceMetaInfo = serviceMetaInfoList.get(0);
+            // 发送 TCP 请求
+            RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, selectedServiceMetaInfo);
+            return rpcResponse.getData();
         } catch (Exception e) {
-            e.printStackTrace();
-            throw e;
-        }
-    }
-
-    /**
-     * 根据序列化器类型获取Content-Type
-     *
-     * @param serializerKey 序列化器键名
-     * @return Content-Type
-     */
-    private String getContentType(String serializerKey) {
-        if ("json".equals(serializerKey)) {
-            return "application/json";
-        } else if ("hessian".equals(serializerKey)) {
-            return "application/x-hessian";
-        } else {
-            // JDK、Kryo等其他序列化器使用二进制格式
-            return "application/octet-stream";
+            throw new RuntimeException("调用服务失败", e);
         }
     }
 }

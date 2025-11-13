@@ -10,6 +10,8 @@ import com.rd.rpc.registry.Registry;
 import com.rd.rpc.registry.RegistryFactory;
 import com.rd.rpc.server.HttpServer;
 import com.rd.rpc.server.VertxHttpServer;
+import com.rd.rpc.server.tcp.VertxTcpClient;
+import com.rd.rpc.server.tcp.VertxTcpServer;
 
 /**
  * 服务提供者示例
@@ -39,7 +41,7 @@ public class ProviderExample {
         }
 
         // 启动 web 服务
-        HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(8080);
     }
 }
